@@ -7,9 +7,9 @@ import com.nothing.exception.HowLongException;
 import com.nothing.responses.HowLongExceptionResponse;
 
 
-public class MyDateUtils {
+public class MyDurationUtils {
 
-	public static HowLongResponse parsePostDuration(Duration howLongD) {
+	public static HowLongResponse getTheSubmissionDuration(Duration howLongD) {
 		//howLongD = howLongD.abs();
 		
 		System.out.println("@@ :: "+howLongD);
@@ -410,7 +410,7 @@ public class MyDateUtils {
 		return null;
 	}
 
-	public MyDateUtils() {
+	public MyDurationUtils() {
 		super();
 	}
 

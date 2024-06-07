@@ -223,7 +223,7 @@ public class OddsRestController {
 			Duration theDuration = Duration.between(today, theParsedSubmittedDateTime);
 
 			
-			howLong = MyDateUtils.parsePostDuration(theDuration);
+			howLong = MyDurationUtils.getTheSubmissionDuration(theDuration);
 			
 
 		} catch (HowLongException e) {
