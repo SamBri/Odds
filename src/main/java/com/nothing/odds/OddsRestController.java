@@ -209,11 +209,11 @@ public class OddsRestController {
 	}
 
 	
-	@GetMapping(value = {"/how-long/since-created","/how-long/estimated-ahead"})
+	@GetMapping(value = {"/how-long"})
 	public ResponseEntity<HowLongResponse> checkHowLong(@RequestParam String submittedDateTime,HttpServletRequest theRequest) 
 {
 
-		String howLong = null;
+		HowLongResponse howLong = null;
 		try {
 
 		   String howLongPath =	theRequest.getRequestURI().toString();
@@ -222,7 +222,8 @@ public class OddsRestController {
 			ZonedDateTime today = ZonedDateTime.now();
 			Duration theDuration = Duration.between(today, theParsedSubmittedDateTime);
 
-			howLong = MyDateUtils.parsePostDuration(theDuration,howLongPath);
+			
+			howLong = MyDateUtils.parsePostDuration(theDuration);
 			
 
 		} catch (HowLongException e) {
@@ -230,7 +231,7 @@ public class OddsRestController {
 			throw new HowLongException(e);
 		}
 
-		return ResponseEntity.ok(new HowLongResponse(howLong));
+		return ResponseEntity.ok(howLong);
 
 	}
 

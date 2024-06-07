@@ -14,4 +14,5 @@ import lombok.ToString;
 public class HowLongResponse {
 
 	private String howLong;
+	private String optType;
 }

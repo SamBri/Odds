@@ -2,18 +2,20 @@ package com.nothing.odds;
 
 import java.time.Duration;
 
+import com.nothing.OptType;
 import com.nothing.exception.HowLongException;
 import com.nothing.responses.HowLongExceptionResponse;
 
 
 public class MyDateUtils {
 
-	public static String parsePostDuration(Duration howLongD, String howLongPath) {
+	public static HowLongResponse parsePostDuration(Duration howLongD) {
 		//howLongD = howLongD.abs();
 		
 		System.out.println("@@ :: "+howLongD);
 		
 		char sign = (!howLongD.isNegative()) ? '+' : '-';
+
 
 		howLongD = howLongD.abs();
 		Integer hours = howLongD.toHoursPart();
@@ -52,13 +54,21 @@ public class MyDateUtils {
 
 		String message = null;
 		
-		if(sign =='-' && howLongPath.contains("since-created")) {
+		String optType=null;
+		
+		HowLongResponse howLongResponse= new HowLongResponse();
+		if(sign =='-' ) {
 			
+			optType = OptType.SINCE_CREATED.toString();
+			howLongResponse.setOptType(optType);
 			// since-created
 			System.out.println("@@@ /since-created");
 			duration = getInterval('-',hours, days, seconds, minutes, weeks, month, year);
 
-		} else if(sign =='+' && howLongPath.contains("estimated-ahead")) {
+		} else if(sign =='+' ) {
+			optType=OptType.ESTIMATED_AHEAD.toString();
+			howLongResponse.setOptType(optType);
+
 			// estimated ahead
 			System.out.println("@@@ /estimated-ahead");
 		  duration = getInterval('+',hours, days, seconds, minutes, weeks, month, year);
@@ -77,36 +87,47 @@ public class MyDateUtils {
 		case HOURS:
 			// System.out.println(duration.getDurationMessage());
 			message = duration.getDurationMessage();
+			howLongResponse.setHowLong(message);
 			break;
 
 		case MINUTES:
 			// System.out.println(duration.getDurationMessage());
 			message = duration.getDurationMessage();
+			howLongResponse.setHowLong(message);
+
 			break;
 
 		case SECONDS:
 			// System.out.println(duration.getDurationMessage());
 			message = duration.getDurationMessage();
+			howLongResponse.setHowLong(message);
+
 			break;
 
 		case DAYS:
 			// System.out.println(duration.getDurationMessage());
 			message = duration.getDurationMessage();
+			howLongResponse.setHowLong(message);
 			break;
 
 		case WEEKS:
 			// System.out.println(duration.getDurationMessage());
 			message = duration.getDurationMessage();
+			howLongResponse.setHowLong(message);
 			break;
 
 		case MONTHS:
 			// System.out.println(duration.getDurationMessage());
 			message = duration.getDurationMessage();
+			howLongResponse.setHowLong(message);
+
 			break;
 
 		case YEARS:
 			// System.out.println(duration.getDurationMessage());
 			message = duration.getDurationMessage();
+			howLongResponse.setHowLong(message);
+
 			break;
 
 		default:
@@ -115,7 +136,7 @@ public class MyDateUtils {
 
 		}
 
-		return message;
+		return howLongResponse;
 	}
 
 	private static MyDuration getInterval(char sign, Integer hours, Long days, Integer seconds, Integer minutes,
