@@ -1,0 +1,24 @@
+tatic block
+The Event TimeStamp :: 2024-06-08T19:13:01.219248200Z[Etc/UTC]
+The Event TimeStamp :: 2024-06-08T19:13:01.219248200Z[Etc/UTC]
+the url @@ {} http://localhost:8080/odds/how-long?submittedDateTime=2024-06-08T19:13:01.219248200Z[Etc/UTC]
+19:13:01.252 [main] DEBUG org.springframework.web.client.RestTemplate - HTTP GET http://localhost:8080/odds/how-long?submittedDateTime=2024-06-08T19:13:01.219248200Z%5BEtc/UTC%5D
+19:13:01.289 [main] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
+19:13:01.313 [main] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
+19:13:01.315 [main] DEBUG org.springframework.web.client.RestTemplate - Reading to [com.nothing.odds.HowLongResponse]
+The event @ Real-Time : just now 
+The Event TimeStamp :: 2024-06-08T19:13:01.219248200Z[Etc/UTC]
+the url @@ {} http://localhost:8080/odds/how-long?submittedDateTime=2024-06-08T19:13:01.219248200Z[Etc/UTC]
+19:14:01.341 [main] DEBUG org.springframework.web.client.RestTemplate - HTTP GET http://localhost:8080/odds/how-long?submittedDateTime=2024-06-08T19:13:01.219248200Z%5BEtc/UTC%5D
+19:14:01.342 [main] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
+19:14:01.350 [main] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
+19:14:01.351 [main] DEBUG org.springframework.web.client.RestTemplate - Reading to [com.nothing.odds.HowLongResponse]
+The event @ Real-Time : 1 minute  ago  
+The Event TimeStamp :: 2024-06-08T19:13:01.219248200Z[Etc/UTC]
+the url @@ {} http://localhost:8080/odds/how-long?submittedDateTime=2024-06-08T19:13:01.219248200Z[Etc/UTC]
+19:15:01.367 [main] DEBUG org.springframework.web.client.RestTemplate - HTTP GET http://localhost:8080/odds/how-long?submittedDateTime=2024-06-08T19:13:01.219248200Z%5BEtc/UTC%5D
+19:15:01.368 [main] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
+19:15:01.376 [main] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
+19:15:01.377 [main] DEBUG org.springframework.web.client.RestTemplate - Reading to [com.nothing.odds.HowLongResponse]
+The event @ Real-Time : 2 minutes  ago  
+
