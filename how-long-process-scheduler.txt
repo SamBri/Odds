@@ -1,0 +1,37 @@
+tatic block
+the url @@ {} http://localhost:8080/odds/how-long?submittedDateTime=2024-06-08T20:59:26.571954Z[Etc/UTC]
+20:59:26.969 [pool-1-thread-1] DEBUG org.springframework.web.client.RestTemplate - HTTP GET http://localhost:8080/odds/how-long?submittedDateTime=2024-06-08T20:59:26.571954Z%5BEtc/UTC%5D
+20:59:27.008 [pool-1-thread-1] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
+20:59:27.030 [pool-1-thread-1] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
+20:59:27.033 [pool-1-thread-1] DEBUG org.springframework.web.client.RestTemplate - Reading to [com.nothing.odds.HowLongResponse]
+The event @ Real-Time : just now 
+the url @@ {} http://localhost:8080/odds/how-long?submittedDateTime=2024-06-08T20:59:26.571954Z[Etc/UTC]
+21:00:26.585 [pool-1-thread-1] DEBUG org.springframework.web.client.RestTemplate - HTTP GET http://localhost:8080/odds/how-long?submittedDateTime=2024-06-08T20:59:26.571954Z%5BEtc/UTC%5D
+21:00:26.586 [pool-1-thread-1] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
+21:00:26.588 [pool-1-thread-1] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
+21:00:26.588 [pool-1-thread-1] DEBUG org.springframework.web.client.RestTemplate - Reading to [com.nothing.odds.HowLongResponse]
+The event @ Real-Time : 1 minute  ago  
+the url @@ {} http://localhost:8080/odds/how-long?submittedDateTime=2024-06-08T20:59:26.571954Z[Etc/UTC]
+21:01:26.582 [pool-1-thread-1] DEBUG org.springframework.web.client.RestTemplate - HTTP GET http://localhost:8080/odds/how-long?submittedDateTime=2024-06-08T20:59:26.571954Z%5BEtc/UTC%5D
+21:01:26.583 [pool-1-thread-1] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
+21:01:26.586 [pool-1-thread-1] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
+21:01:26.586 [pool-1-thread-1] DEBUG org.springframework.web.client.RestTemplate - Reading to [com.nothing.odds.HowLongResponse]
+The event @ Real-Time : 2 minutes  ago  
+the url @@ {} http://localhost:8080/odds/how-long?submittedDateTime=2024-06-08T20:59:26.571954Z[Etc/UTC]
+21:02:26.590 [pool-1-thread-1] DEBUG org.springframework.web.client.RestTemplate - HTTP GET http://localhost:8080/odds/how-long?submittedDateTime=2024-06-08T20:59:26.571954Z%5BEtc/UTC%5D
+21:02:26.591 [pool-1-thread-1] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
+21:02:26.602 [pool-1-thread-1] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
+21:02:26.603 [pool-1-thread-1] DEBUG org.springframework.web.client.RestTemplate - Reading to [com.nothing.odds.HowLongResponse]
+The event @ Real-Time : 3 minutes  ago  
+the url @@ {} http://localhost:8080/odds/how-long?submittedDateTime=2024-06-08T20:59:26.571954Z[Etc/UTC]
+21:03:26.580 [pool-1-thread-1] DEBUG org.springframework.web.client.RestTemplate - HTTP GET http://localhost:8080/odds/how-long?submittedDateTime=2024-06-08T20:59:26.571954Z%5BEtc/UTC%5D
+21:03:26.581 [pool-1-thread-1] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
+21:03:26.585 [pool-1-thread-1] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
+21:03:26.586 [pool-1-thread-1] DEBUG org.springframework.web.client.RestTemplate - Reading to [com.nothing.odds.HowLongResponse]
+The event @ Real-Time : 4 minutes  ago  
+the url @@ {} http://localhost:8080/odds/how-long?submittedDateTime=2024-06-08T20:59:26.571954Z[Etc/UTC]
+21:04:26.593 [pool-1-thread-1] DEBUG org.springframework.web.client.RestTemplate - HTTP GET http://localhost:8080/odds/how-long?submittedDateTime=2024-06-08T20:59:26.571954Z%5BEtc/UTC%5D
+21:04:26.594 [pool-1-thread-1] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
+21:04:26.604 [pool-1-thread-1] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
+21:04:26.605 [pool-1-thread-1] DEBUG org.springframework.web.client.RestTemplate - Reading to [com.nothing.odds.HowLongResponse]
+The event @ Real-Time : 5 minutes  ago  
