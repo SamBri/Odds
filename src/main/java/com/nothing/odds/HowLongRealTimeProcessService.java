@@ -51,21 +51,49 @@ public class HowLongRealTimeProcessService {
 
 	public static void main(String[] args) {
 
-		try {
+		String howLong = null;
 
-			// 1. call the how long service
-			String event = ZonedDateTime.now().toString();
-			// 2. send signal to the service for duration
-			String howLong = showHowLongResponse(event);
+		String theEvent = ZonedDateTime.now().toString();
+		
+		System.out.println("The Event TimeStamp :: " + theEvent);
 
-			System.out.println(howLong);
-			// 3. show the real time duration at every clock tick
+		while (true) {
 
-		} catch (Exception e) {
+			try {
 
-			System.err.println(e);
+				// 1. call the how long service
+				
+				System.out.println("The Event TimeStamp :: " + theEvent);
+
+
+				howLong = showHowLongResponse(theEvent);
+
+				System.out.println("The event @ Real-Time : {} ".replace("{}", howLong));
+				
+				
+				Thread.sleep(60000); 
+
+				/*
+				 * As the processor is running at clock speed. 1. store the created event. 2.
+				 * tick the call to the api at every instant 3. have the new howLongResponse
+				 * communicated
+				 */
+
+				// 2. send signal to the service for duration
+
+				// 3. show the real time duration at every clock tick
+
+			} catch (Exception e) {
+
+				System.err.println(e);
+
+			}
 
 		}
+		
+		
+		
+
 	}
 
 }
