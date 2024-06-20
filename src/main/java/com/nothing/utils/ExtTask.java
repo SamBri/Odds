@@ -1,4 +1,4 @@
-package com.css.howlong;
+package com.nothing.utils;
 
 import java.util.concurrent.Callable;
 
@@ -34,15 +34,17 @@ public class ExtTask implements Callable<FileScanResult> {
 		
 		if(!fileExt.equalsIgnoreCase(illegal))
 		{
+			fileScanResult.setFileName(fileName);
 			fileScanResult.setFileExt(fileExt);
 			fileScanResult.setResult("ACCEPTABLE");
 			fileScanResult.setMessage(fileScanResult.getResult().concat(" ").concat("file ext : ").concat(fileScanResult.getFileExt()));
 			
 		}	else {
 			
+			fileScanResult.setFileName(fileName);
 			fileScanResult.setFileExt(fileExt);
-			fileScanResult.setResult("UNACCETABLE");
-			fileScanResult.setMessage(fileScanResult.getResult().concat(" ").concat("file ext : ").concat(fileScanResult.getFileExt()));
+			fileScanResult.setResult("UNACCEPTABLE");
+			fileScanResult.setMessage(fileScanResult.getResult().concat(" ").concat("file ext : ").concat(fileScanResult.getFileExt()).concat(" for file : ").concat(fileScanResult.getFileName()));
 			
 		} 
 		

@@ -1,4 +1,4 @@
-package com.css.howlong;
+package com.nothing.utils;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

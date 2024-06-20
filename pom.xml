@@ -8,10 +8,10 @@
 		<version>3.2.6</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.css.realtime</groupId>
-	<artifactId>how-long-realtime-streaming-service</artifactId>
+	<groupId>com.nothing.utils</groupId>
+	<artifactId>file-ext-scanner</artifactId>
 	<version>1.0</version>
-	<name>how-long-realtime-streaming-service</name>
+	<name>file-ext-scanner</name>
 	<description></description>
 	<properties>
 		<java.version>17</java.version>

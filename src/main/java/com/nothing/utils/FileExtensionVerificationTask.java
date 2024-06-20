@@ -1,4 +1,4 @@
-package com.css.howlong;
+package com.nothing.utils;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -60,7 +60,9 @@ public class FileExtensionVerificationTask implements Runnable {
 						emitter.send(fileScanResult.getMessage());
 
 					} else {
-						emitter.send(fileScanResult.getMessage());
+						
+						System.out.println("This file extension, {} ,is acceptable".replace("{}",fileScanResult.getFileExt()));
+					//	emitter.send(fileScanResult.getMessage());
 
 					}
 
@@ -77,10 +79,11 @@ public class FileExtensionVerificationTask implements Runnable {
 
 			}
 
-			emitter.complete();
-			
-
+		
 		}
+		
+		emitter.complete();
+
 
 		
 
@@ -90,7 +93,7 @@ public class FileExtensionVerificationTask implements Runnable {
 
 		System.out.println("The file : " + file);
 
-		final String fileExt = file.split("\\.")[1];
+		final String fileExt = "."+file.split("\\.")[1];
 
 		System.out.println("The ext : " + fileExt);
 
