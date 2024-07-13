@@ -1,0 +1,212 @@
+{
+	"info": {
+		"_postman_id": "6acba432-cb00-40f4-98dc-179e9e543396",
+		"name": "url-cess-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9941237"
+	},
+	"item": [
+		{
+			"name": "create url",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\":\"{{$randomUUID}}\",\r\n    \"access_duration\":60\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8060/api/cessations/urls",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8060",
+					"path": [
+						"api",
+						"cessations",
+						"urls"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"webhook\":\"https://paula.net/user-access/contents/userId\",\r\n    \"userId\":\"{{$randomUUID}}\",\r\n    \"access_duration\":600\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8060/api/cessations/urls",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8060",
+							"path": [
+								"api",
+								"cessations",
+								"urls"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 03 Jul 2024 17:05:37 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 201,\n    \"message\": \"url has been successfully created!\",\n    \"response\": {\n        \"id\": 305,\n        \"urlId\": \"2c72a905-6f95-49d8-8cce-dff24f54290b\",\n        \"userId\": \"a59e3faa-00fd-4062-8ef9-532b34e32a24\",\n        \"url\": \"http://localhost:8060/user-access/contents/a59e3faa-00fd-4062-8ef9-532b34e32a24\",\n        \"status\": \"CREATED\",\n        \"expiresAt\": \"2024-07-03T17:15:37.5718649Z\",\n        \"createdAt\": \"2024-07-03T17:05:37.576873Z\",\n        \"createdBy\": null,\n        \"updatedBy\": null,\n        \"updatedAt\": \"2024-07-03T17:05:37.576873Z\",\n        \"access_duration\": \"PT10M\"\n    },\n    \"status\": \"CREATED\",\n    \"requestId\": null,\n    \"timestamp\": \"2024-07-03T17:05:37.5828742Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "access",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "access - expired",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8060/user-access/contents/:user_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8060",
+							"path": [
+								"user-access",
+								"contents",
+								":user_id"
+							],
+							"variable": [
+								{
+									"key": "user_id",
+									"value": "f756e934-45f5-4d6e-aeaf-8cbca27b3a57"
+								}
+							]
+						}
+					},
+					"status": "Bad Gateway",
+					"code": 502,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 10 Jul 2024 05:41:13 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 400,\n    \"message\": \"content could not be accessed.\",\n    \"response\": {\n        \"content\": \"The url has expired.\"\n    },\n    \"status\": \"error\",\n    \"requestId\": null,\n    \"timestamp\": \"2024-07-10T05:41:13.980416Z\"\n}"
+				},
+				{
+					"name": "access - open",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8060/user-access/contents/:user_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8060",
+							"path": [
+								"user-access",
+								"contents",
+								":user_id"
+							],
+							"variable": [
+								{
+									"key": "user_id",
+									"value": "5ceb2c93-8bfa-4aca-bf8c-605d59d07888"
+								}
+							]
+						}
+					},
+					"status": "Resume Incomplete",
+					"code": 308,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 10 Jul 2024 07:01:28 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"message\": \"content could be accessed.\",\n    \"response\": {\n        \"content\": \"https://\"\n    },\n    \"status\": \"success\",\n    \"requestId\": null,\n    \"timestamp\": \"2024-07-10T07:01:28.1876572Z\"\n}"
+				}
+			]
+		}
+	]
+}
