@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages</title>
+      <link rel="stylesheet" href="/css/content.css" th:href="@{/css/content.css}">
+</head>
+<body>
+<header id="header">
+  <div class="title">
+    <h1>Messages</h1>
+<!--     <p th:text="${url.status}"></p> -->
+
+  </div>
+  <div class="menu-trigger">
+    <button><i class="fa fa-bars"></i></button>
+  </div>
+  <div class="x"></div>
+</header>
+<nav class="menu-selector">
+  <ul>
+    <li><a href="#home"><i class="fa fa-home"></i><span>Inicio</span></a></li>
+    <li><a href="#about"><i class="fa fa-info"></i><span>About</span></a></li>
+  </ul>
+</nav>
+<section class="container">
+  <h1 class="title">Note</h1>
+  <h2>Warning</h2>
+  <p></p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<a href="#linky">I'm a link</a>rerum temporibus, molestiae, illum autem perspiciatis suscipit cumque sequi fugit et porro eum fuga eos minima similique assumenda labore quisquam cum!<br/>
+ </section>
+ 
+ 
+<script th:inline="javascript">
+   var expiresAt = [[${expiresAt}]]
+   expiresAt = Date.parse(expiresAt);
+   setInterval(reloadPage,1000);
+   function reloadPage(){
+	   
+	   var now = Date.now();	   
+	   if(now > expiresAt){
+		   window.location.reload();
+		   
+	   }
+	   
+   }
+   
+   
+    
+</script>
+    
+</body>
+</html>
