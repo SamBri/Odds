@@ -12,7 +12,6 @@ import lombok.ToString;
 
 @Getter
 @Setter
-@ToString
 @NoArgsConstructor
 public class DeviceForm extends Device {
 
@@ -20,6 +19,8 @@ public class DeviceForm extends Device {
 	public String getDeviceModel() {
 		return this.deviceModel;
 	}
+	
+	
 
 	@Override
 	public String getDeviceType() {
@@ -43,26 +44,51 @@ public class DeviceForm extends Device {
 
 	@Override
 	public void setDeviceType(String deviceType) {
-		this.setDeviceType(deviceType);
+		this.deviceType = deviceType;
 	}
 
 	@Override
 	public void setHardwareAddress(String hardwareAddress) {
-		this.setHardwareAddress(hardwareAddress);
+		this.hardwareAddress = hardwareAddress;
 	}
 
 	@Override
 	public void setOwnerId(String ownerId) {
-		this.setOwnerId(ownerId);
+		this.ownerId =  ownerId;
 	}
 
 	@Override
 	public void setSerialNumber(String serialNumber) {
-		this.setSerialNumber(serialNumber);
+		this.serialNumber = serialNumber;
 	}
 
+
+	@Override
+	public String toString() {
+		return "DeviceForm [serialNumber=" + serialNumber + ", deviceType=" + deviceType + ", deviceModel="
+				+ deviceModel + ", ownerId=" + ownerId + ", hardwareAddress=" + hardwareAddress + "]";
+	}
+	
+	
+	
 	public static void main(String[] args) {
 		DeviceForm form = new DeviceForm();
 	}
+
+
+
+	@Override
+	public boolean equals(Object obj) {
+		
+		
+		if(this.toString().equals(obj.toString())) {
+			return true;
+		}
+		
+		return false;
+	}
+
+
+
 
 }

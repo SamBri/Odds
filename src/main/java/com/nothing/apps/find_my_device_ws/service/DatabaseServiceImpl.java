@@ -17,6 +17,7 @@ import com.nothing.apps.find_my_device_ws.db.Owner;
 import com.nothing.apps.find_my_device_ws.dto.DeviceForm;
 import com.nothing.apps.find_my_device_ws.dto.OwnerDetailsFormDto;
 import com.nothing.apps.find_my_device_ws.dto.SaveDeviceRequestDto;
+import com.nothing.apps.find_my_device_ws.exception.DuplicateHardwareAddressException;
 import com.nothing.apps.find_my_device_ws.exception.OwnerAlreadyExistException;
 import com.nothing.apps.find_my_device_ws.exception.OwnerDoesNotExistException;
 import com.nothing.apps.find_my_device_ws.exception.SaveDeviceException;
@@ -37,38 +38,36 @@ public class DatabaseServiceImpl implements DatabaseService {
 	@Override
 	public List<Device> saveDevice(SaveDeviceRequestDto request) throws SaveDeviceException {
 
-		List<Set<DeviceForm>> deviceList = request.getDeviceList();
+		Set<DeviceForm> deviceList = request.getDeviceList();
 
 		List<Device> list = new ArrayList<>();
-		Map<UUID, Device> mapper = new HashMap<>();
 
 		try {
 
-			for (Set<DeviceForm> form : deviceList) {
+			for (DeviceForm form : deviceList) {
 
-				form.forEach(device -> {
-					Device tempDevice = deviceRepo
-							.save(new Device(null, UUID.randomUUID(), device.getSerialNumber(), device.getDeviceType(),
-									device.getDeviceModel(), device.getOwnerId(), device.getHardwareAddress()));
+				if (deviceRepo.findDeviceByHardwareAddress(form.getHardwareAddress()) != null) {
 
-					mapper.put(tempDevice.getDeviceId(), tempDevice);
+					Throwable uniqueViolationCause = new Throwable("device hardware address, {} , is a duplicate".replace("{}", form.getHardwareAddress()));
+					throw new DuplicateHardwareAddressException(uniqueViolationCause.getMessage());
+				}
 
-				});
+				
+				Device tempDevice = deviceRepo.save(new Device(null, UUID.randomUUID(), form.getSerialNumber(),
+						form.getDeviceType(), form.getDeviceModel(), request.getOwnerId(), form.getHardwareAddress()));
+
+				list.add(tempDevice);
 
 			}
 
-		} catch (Exception e) {
+		} catch (
+
+		Exception e) {
 
 			String text = "your  device could not be saved";
 			String message = list.size() < 1 ? text : text.replace("device", "devices");
 
 			throw new SaveDeviceException(message, e);
-		}
-
-		for (Device savedDevice : mapper.values()) {
-
-			list.add(savedDevice);
-
 		}
 
 		return list;
@@ -82,10 +81,10 @@ public class DatabaseServiceImpl implements DatabaseService {
 		log.info("onboard onwer with formData {}", data);
 
 		log.info("does owner exist?");
-		Owner theOwner = new Owner();
+		Owner theOwner;
 		log.info("checking with email ?");
 		theOwner = ownerRepo.findOwnerByEmailAddress(data.getEmailAddress());
-		if (theOwner == null) {
+		if (theOwner != null) {
 			log.info("email :: true");
 			throw new OwnerAlreadyExistException(
 					"a user already exist with the email, {}".replace("{}", data.getEmailAddress()));
@@ -95,7 +94,7 @@ public class DatabaseServiceImpl implements DatabaseService {
 
 		log.info("checking with mobileNumber ?");
 		theOwner = ownerRepo.findOwnerByMobileNumber(data.getMobileNumber());
-		if (theOwner == null) {
+		if (theOwner != null) {
 			log.info("mobileNumber :: true");
 			throw new OwnerAlreadyExistException(
 					"a user already exist with the mobileNumber, {}".replace("{}", data.getMobileNumber()));
@@ -105,6 +104,7 @@ public class DatabaseServiceImpl implements DatabaseService {
 
 		log.info(":) , new user detected!");
 
+		theOwner = new Owner();
 		theOwner.setCountry(data.getCountry());
 		theOwner.setFirstName(data.getFirstName());
 		theOwner.setLastName(data.getLastName());

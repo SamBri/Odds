@@ -71,6 +71,24 @@ public class FindMyDeviceExceptionService {
 	}
 	
 	
+	@ExceptionHandler(DuplicateHardwareAddressException.class)
+	public ResponseEntity<RootResponse<String>> handleDuplicateHardwareAddress(DuplicateHardwareAddressException  e){
+		
+		log.error("@@  handleDuplicateHardwareAddress handler");
+		
+		log.error("DuplicateHardwareAddressException",e);
+		
+		RootResponse<String> exceptionResponse = new RootResponse<>();
+		
+		exceptionResponse.setCode(532);
+		exceptionResponse.setMessage(e.getMessage());
+		exceptionResponse.setStatus("error");
+		exceptionResponse.setResponse(null);
+		exceptionResponse.setTimeStamp(OffsetDateTime.now());
+		return new ResponseEntity<RootResponse<String>>(exceptionResponse,HttpStatus.NOT_ACCEPTABLE);
+	}
+	
+	
 	@ExceptionHandler(InvalidEmailAddressException.class)
 	public ResponseEntity<RootResponse<String>> handleInvalidEmailAddressException(InvalidEmailAddressException  e){
 		

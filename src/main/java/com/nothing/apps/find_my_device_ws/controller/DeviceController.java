@@ -57,7 +57,7 @@ public class DeviceController {
 		apiResponse.setResponse(list);
 		apiResponse.setStatus("success");
 		String text = "your device was successfully saved!";
-		String message = list.size() < 1 ? text : text.replace("device", "devices").replace("was", "were");
+		String message = !(list.size() > 1) ? text : text.replace("device", "devices").replace("was", "were");
 		apiResponse.setMessage(message);
 		apiResponse.setTimeStamp(OffsetDateTime.now());
 

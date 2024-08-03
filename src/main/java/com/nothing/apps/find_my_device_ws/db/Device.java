@@ -32,7 +32,7 @@ public class Device {
 	@Column(name = "device_id", nullable = false)
 	private UUID deviceId;
 
-	@Column(name = "serial_number", unique = true, nullable = false)
+	@Column(name = "serial_number", unique = false, nullable = false)
 	protected String serialNumber;
 
 	@Column(name = "device_type", nullable = false)

@@ -1,0 +1,806 @@
+{
+	"info": {
+		"_postman_id": "bbb3d626-7fbe-4d78-9ed9-12a16264e2af",
+		"name": "find-my-device-ws",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9941237"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "v1",
+					"item": [
+						{
+							"name": "owner",
+							"item": [
+								{
+									"name": "onboarding of owners",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJVTklGSUVEX0FVVEhFTlRJQ0FUSU9OX1NFUlZJQ0VfT0FVVEgyU0VSVkVSIiwic3ViIjoiVVNFUl9KV1RfUkVRVUVTVCIsImV4cCI6MTcyMjcwNTc3MCwiaWF0IjoxNzIyNzA1NDEwLCJ1c2VySWQiOiJrZWFudS5xdWl0em9uIn0.DDwe0GSG3iWAOk8uKNU9LkpbRAuVrzQV05DVkZj23_k",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"firstName\": \"Aaron\",\r\n    \"lastName\": \"Hane\",\r\n    \"emailAddress\": \"Aaron.Hane@gmail.com\",\r\n    \"mobileNumber\": \"0275684323\",\r\n    \"country\": \"GHANA\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8086/find-my-device-ws/api/v1/onboarding/owners",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8086",
+											"path": [
+												"find-my-device-ws",
+												"api",
+												"v1",
+												"onboarding",
+												"owners"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "onboarding of owners",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"firstName\": \"Aaron\",\r\n    \"lastName\": \"Hane\",\r\n    \"emailAddress\": \"Aaron.Hane@gmail.com\",\r\n    \"mobileNumber\": \"0275684323\",\r\n    \"country\": \"GHANA\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "http://localhost:8086/find-my-device-ws/api/v1/onboarding/owners",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8086",
+													"path": [
+														"find-my-device-ws",
+														"api",
+														"v1",
+														"onboarding",
+														"owners"
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Vary",
+													"value": "Origin"
+												},
+												{
+													"key": "Vary",
+													"value": "Access-Control-Request-Method"
+												},
+												{
+													"key": "Vary",
+													"value": "Access-Control-Request-Headers"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, no-store, max-age=0, must-revalidate"
+												},
+												{
+													"key": "Pragma",
+													"value": "no-cache"
+												},
+												{
+													"key": "Expires",
+													"value": "0"
+												},
+												{
+													"key": "X-Frame-Options",
+													"value": "DENY"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Date",
+													"value": "Sat, 03 Aug 2024 17:20:05 GMT"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=60"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"code\": 201,\n    \"message\": \"you have successfully onboarded!\",\n    \"response\": {\n        \"id\": 1,\n        \"firstName\": \"Aaron\",\n        \"lastName\": \"Hane\",\n        \"emailAddress\": \"Aaron.Hane@gmail.com\",\n        \"mobileNumber\": \"0275684323\",\n        \"country\": \"GHANA\",\n        \"countryCode\": null,\n        \"ownerId\": \"Aaron.Hane\",\n        \"ownerNo\": 587339,\n        \"ownerRefNo\": \"2b237bde-5d62-47e6-ad12-4cbd6e3dcf26\"\n    },\n    \"status\": \"success\",\n    \"timeStamp\": \"2024-08-03T17:20:05.9399597Z\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "device",
+							"item": [
+								{
+									"name": "save device",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJSRVNPVVJDRV9BQ0NFU1NfSldUX1JFUVVFU1QiLCJyZXNvdXJjZUlkIjoiZmluZC1teS1kZXZpY2Utd3MiLCJpc3MiOiJVTklGSUVEX0FVVEhFTlRJQ0FUSU9OX1NFUlZJQ0VfT0FVVEgyU0VSVkVSIiwiZXhwIjoxNzIyNzA2NzQwLCJpYXQiOjE3MjI3MDYzODAsInVzZXJJZCI6ImtlYW51LnF1aXR6b24ifQ.xcqPx1vSqM5kZLt3ta76R-0fld_dFiGZX261l_Jia3s",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"deviceList\": [\r\n        {\r\n            \"deviceType\": \"MOBILE\",\r\n            \"hardwareAddress\": \"c2:7c4f445:0c:87:5c:19\",\r\n            \"serialNumber\": \"SN6743hdddh\",\r\n            \"deviceModel\": \"SM-21\"\r\n        },\r\n        {\r\n            \"deviceType\": \"MOBILE\",\r\n            \"hardwareAddress\": \"c31:3c3d514f:0c:87:5c:19\",\r\n            \"serialNumber\": \"SN6743dddh\",\r\n            \"deviceModel\": \"SM-21\"\r\n        }\r\n    ],\r\n    \"ownerId\": \"Aaron.Hane\"\r\n}\r\n/* {\r\n    \"code\": 201,\r\n    \"message\": \"your device was successfully saved!\",\r\n    \"response\": {\r\n        \"id\": 152,\r\n        \"deviceId\": \"27ef2fb4-1553-4e9a-ab62-a62011d910c8\",\r\n        \"serialNumber\": \"3\",\r\n        \"deviceType\": \"MOBILE_PHONE\",\r\n        \"deviceModel\": \"SM-Au\",\r\n        \"ownerId\": \"Tony.Fadel58\",\r\n        \"hardwareAddress\": \"c1:7c:0c:87:5c:19\"\r\n    },\r\n    \"status\": \"success\",\r\n    \"timeStamp\": \"2024-08-01T09:02:29.2307828Z\"\r\n} */",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8086/find-my-device-ws/api/v1/devices",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8086",
+											"path": [
+												"find-my-device-ws",
+												"api",
+												"v1",
+												"devices"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "unique violation - duplicate hardware address",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"deviceList\": [\r\n        {\r\n            \"deviceType\": \"MOBILE\",\r\n            \"hardwareAddress\": \"c2:7c445:0c:87:5c:19\",\r\n            \"serialNumber\": \"SN6743hdddh\",\r\n            \"deviceModel\": \"SM-21\"\r\n        },\r\n        {\r\n            \"deviceType\": \"MOBILE\",\r\n            \"hardwareAddress\": \"c1:3c3d514:0c:87:5c:19\",\r\n            \"serialNumber\": \"SN6743dddh\",\r\n            \"deviceModel\": \"SM-21\"\r\n        }\r\n    ],\r\n    \"ownerId\": \"Aaron.Hane\"\r\n}\r\n/* {\r\n    \"code\": 201,\r\n    \"message\": \"your device was successfully saved!\",\r\n    \"response\": {\r\n        \"id\": 152,\r\n        \"deviceId\": \"27ef2fb4-1553-4e9a-ab62-a62011d910c8\",\r\n        \"serialNumber\": \"3\",\r\n        \"deviceType\": \"MOBILE_PHONE\",\r\n        \"deviceModel\": \"SM-Au\",\r\n        \"ownerId\": \"Tony.Fadel58\",\r\n        \"hardwareAddress\": \"c1:7c:0c:87:5c:19\"\r\n    },\r\n    \"status\": \"success\",\r\n    \"timeStamp\": \"2024-08-01T09:02:29.2307828Z\"\r\n} */",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "http://localhost:8086/find-my-device-ws/api/v1/devices",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8086",
+													"path": [
+														"find-my-device-ws",
+														"api",
+														"v1",
+														"devices"
+													]
+												}
+											},
+											"status": "Expectation Failed",
+											"code": 417,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Vary",
+													"value": "Origin"
+												},
+												{
+													"key": "Vary",
+													"value": "Access-Control-Request-Method"
+												},
+												{
+													"key": "Vary",
+													"value": "Access-Control-Request-Headers"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, no-store, max-age=0, must-revalidate"
+												},
+												{
+													"key": "Pragma",
+													"value": "no-cache"
+												},
+												{
+													"key": "Expires",
+													"value": "0"
+												},
+												{
+													"key": "X-Frame-Options",
+													"value": "DENY"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Date",
+													"value": "Sat, 03 Aug 2024 17:18:10 GMT"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=60"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"code\": 100,\n    \"message\": \"your  device could not be saved\",\n    \"response\": \"device hardware address, c1:3c3d514:0c:87:5c:19 , is not unique\",\n    \"status\": \"error\",\n    \"timeStamp\": \"2024-08-03T17:18:10.0691485Z\"\n}"
+										},
+										{
+											"name": "save devices",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"deviceList\": [\r\n        {\r\n            \"deviceType\": \"MOBILE\",\r\n            \"hardwareAddress\": \"c2:7c4f445:0c:87:5c:19\",\r\n            \"serialNumber\": \"SN6743hdddh\",\r\n            \"deviceModel\": \"SM-21\"\r\n        },\r\n        {\r\n            \"deviceType\": \"MOBILE\",\r\n            \"hardwareAddress\": \"c31:3c3d514f:0c:87:5c:19\",\r\n            \"serialNumber\": \"SN6743dddh\",\r\n            \"deviceModel\": \"SM-21\"\r\n        }\r\n    ],\r\n    \"ownerId\": \"Aaron.Hane\"\r\n}\r\n/* {\r\n    \"code\": 201,\r\n    \"message\": \"your device was successfully saved!\",\r\n    \"response\": {\r\n        \"id\": 152,\r\n        \"deviceId\": \"27ef2fb4-1553-4e9a-ab62-a62011d910c8\",\r\n        \"serialNumber\": \"3\",\r\n        \"deviceType\": \"MOBILE_PHONE\",\r\n        \"deviceModel\": \"SM-Au\",\r\n        \"ownerId\": \"Tony.Fadel58\",\r\n        \"hardwareAddress\": \"c1:7c:0c:87:5c:19\"\r\n    },\r\n    \"status\": \"success\",\r\n    \"timeStamp\": \"2024-08-01T09:02:29.2307828Z\"\r\n} */",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "http://localhost:8086/find-my-device-ws/api/v1/devices",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8086",
+													"path": [
+														"find-my-device-ws",
+														"api",
+														"v1",
+														"devices"
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Vary",
+													"value": "Origin"
+												},
+												{
+													"key": "Vary",
+													"value": "Access-Control-Request-Method"
+												},
+												{
+													"key": "Vary",
+													"value": "Access-Control-Request-Headers"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, no-store, max-age=0, must-revalidate"
+												},
+												{
+													"key": "Pragma",
+													"value": "no-cache"
+												},
+												{
+													"key": "Expires",
+													"value": "0"
+												},
+												{
+													"key": "X-Frame-Options",
+													"value": "DENY"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Date",
+													"value": "Sat, 03 Aug 2024 17:23:09 GMT"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=60"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"code\": 201,\n    \"message\": \"your devices were successfully saved!\",\n    \"response\": [\n        {\n            \"id\": 54,\n            \"deviceId\": \"de558cbd-35b4-4710-a990-5b01a54a11d5\",\n            \"serialNumber\": \"SN6743dddh\",\n            \"deviceType\": \"MOBILE\",\n            \"deviceModel\": \"SM-21\",\n            \"ownerId\": \"Aaron.Hane\",\n            \"hardwareAddress\": \"c31:3c3d514f:0c:87:5c:19\"\n        },\n        {\n            \"id\": 55,\n            \"deviceId\": \"4b87776e-cd21-48d1-bbca-5710e58a9d9d\",\n            \"serialNumber\": \"SN6743hdddh\",\n            \"deviceType\": \"MOBILE\",\n            \"deviceModel\": \"SM-21\",\n            \"ownerId\": \"Aaron.Hane\",\n            \"hardwareAddress\": \"c2:7c4f445:0c:87:5c:19\"\n        }\n    ],\n    \"status\": \"success\",\n    \"timeStamp\": \"2024-08-03T17:23:09.9498385Z\"\n}"
+										},
+										{
+											"name": "save devices - make unique hardware address request",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"deviceList\": [\r\n        {\r\n            \"deviceType\": \"MOBILE\",\r\n            \"hardwareAddress\": \"c31:3c3d35k14f:0c:87:5c:19\",\r\n            \"serialNumber\": \"SN6743dddh\",\r\n            \"deviceModel\": \"SM-21\"\r\n        }\r\n    ],\r\n    \"ownerId\": \"Aaron.Hane\"\r\n}\r\n/* {\r\n    \"code\": 201,\r\n    \"message\": \"your device was successfully saved!\",\r\n    \"response\": {\r\n        \"id\": 152,\r\n        \"deviceId\": \"27ef2fb4-1553-4e9a-ab62-a62011d910c8\",\r\n        \"serialNumber\": \"3\",\r\n        \"deviceType\": \"MOBILE_PHONE\",\r\n        \"deviceModel\": \"SM-Au\",\r\n        \"ownerId\": \"Tony.Fadel58\",\r\n        \"hardwareAddress\": \"c1:7c:0c:87:5c:19\"\r\n    },\r\n    \"status\": \"success\",\r\n    \"timeStamp\": \"2024-08-01T09:02:29.2307828Z\"\r\n} */",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "http://localhost:8086/find-my-device-ws/api/v1/devices",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8086",
+													"path": [
+														"find-my-device-ws",
+														"api",
+														"v1",
+														"devices"
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Vary",
+													"value": "Origin"
+												},
+												{
+													"key": "Vary",
+													"value": "Access-Control-Request-Method"
+												},
+												{
+													"key": "Vary",
+													"value": "Access-Control-Request-Headers"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, no-store, max-age=0, must-revalidate"
+												},
+												{
+													"key": "Pragma",
+													"value": "no-cache"
+												},
+												{
+													"key": "Expires",
+													"value": "0"
+												},
+												{
+													"key": "X-Frame-Options",
+													"value": "DENY"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Date",
+													"value": "Sat, 03 Aug 2024 17:33:31 GMT"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=60"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"code\": 201,\n    \"message\": \"your device was successfully saved!\",\n    \"response\": [\n        {\n            \"id\": 102,\n            \"deviceId\": \"93d504a5-9884-4eb5-9764-b88bce75cdb3\",\n            \"serialNumber\": \"SN6743dddh\",\n            \"deviceType\": \"MOBILE\",\n            \"deviceModel\": \"SM-21\",\n            \"ownerId\": \"Aaron.Hane\",\n            \"hardwareAddress\": \"c31:3c3d35k14f:0c:87:5c:19\"\n        }\n    ],\n    \"status\": \"success\",\n    \"timeStamp\": \"2024-08-03T17:33:31.9200816Z\"\n}"
+										},
+										{
+											"name": "save device - make unique hardware address request",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"deviceList\": [\r\n        {\r\n            \"deviceType\": \"MOBILE\",\r\n            \"hardwareAddress\": \"c431:33d35k14f:0c:87:5c:19\",\r\n            \"serialNumber\": \"SN6743dddh\",\r\n            \"deviceModel\": \"SM-21\"\r\n        }\r\n    ],\r\n    \"ownerId\": \"Aaron.Hane\"\r\n}\r\n/* {\r\n    \"code\": 201,\r\n    \"message\": \"your device was successfully saved!\",\r\n    \"response\": {\r\n        \"id\": 152,\r\n        \"deviceId\": \"27ef2fb4-1553-4e9a-ab62-a62011d910c8\",\r\n        \"serialNumber\": \"3\",\r\n        \"deviceType\": \"MOBILE_PHONE\",\r\n        \"deviceModel\": \"SM-Au\",\r\n        \"ownerId\": \"Tony.Fadel58\",\r\n        \"hardwareAddress\": \"c1:7c:0c:87:5c:19\"\r\n    },\r\n    \"status\": \"success\",\r\n    \"timeStamp\": \"2024-08-01T09:02:29.2307828Z\"\r\n} */",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "http://localhost:8086/find-my-device-ws/api/v1/devices",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8086",
+													"path": [
+														"find-my-device-ws",
+														"api",
+														"v1",
+														"devices"
+													]
+												}
+											},
+											"status": "Expectation Failed",
+											"code": 417,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Vary",
+													"value": "Origin"
+												},
+												{
+													"key": "Vary",
+													"value": "Access-Control-Request-Method"
+												},
+												{
+													"key": "Vary",
+													"value": "Access-Control-Request-Headers"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, no-store, max-age=0, must-revalidate"
+												},
+												{
+													"key": "Pragma",
+													"value": "no-cache"
+												},
+												{
+													"key": "Expires",
+													"value": "0"
+												},
+												{
+													"key": "X-Frame-Options",
+													"value": "DENY"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Date",
+													"value": "Sat, 03 Aug 2024 17:35:39 GMT"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=60"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"code\": 100,\n    \"message\": \"your  device could not be saved\",\n    \"response\": \"device hardware address, c431:33d35k14f:0c:87:5c:19 , is a duplicate\",\n    \"status\": \"error\",\n    \"timeStamp\": \"2024-08-03T17:35:39.7643674Z\"\n}"
+										},
+										{
+											"name": "save a device",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"deviceList\": [\r\n        {\r\n            \"deviceType\": \"MOBILE\",\r\n            \"hardwareAddress\": \"c4e3r1:33d35k14f:0c:87:5c:19\",\r\n            \"serialNumber\": \"SN6743dddh\",\r\n            \"deviceModel\": \"SM-21\"\r\n        }\r\n    ],\r\n    \"ownerId\": \"Aaron.Hane\"\r\n}\r\n/* {\r\n    \"code\": 201,\r\n    \"message\": \"your device was successfully saved!\",\r\n    \"response\": {\r\n        \"id\": 152,\r\n        \"deviceId\": \"27ef2fb4-1553-4e9a-ab62-a62011d910c8\",\r\n        \"serialNumber\": \"3\",\r\n        \"deviceType\": \"MOBILE_PHONE\",\r\n        \"deviceModel\": \"SM-Au\",\r\n        \"ownerId\": \"Tony.Fadel58\",\r\n        \"hardwareAddress\": \"c1:7c:0c:87:5c:19\"\r\n    },\r\n    \"status\": \"success\",\r\n    \"timeStamp\": \"2024-08-01T09:02:29.2307828Z\"\r\n} */",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "http://localhost:8086/find-my-device-ws/api/v1/devices",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8086",
+													"path": [
+														"find-my-device-ws",
+														"api",
+														"v1",
+														"devices"
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Vary",
+													"value": "Origin"
+												},
+												{
+													"key": "Vary",
+													"value": "Access-Control-Request-Method"
+												},
+												{
+													"key": "Vary",
+													"value": "Access-Control-Request-Headers"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, no-store, max-age=0, must-revalidate"
+												},
+												{
+													"key": "Pragma",
+													"value": "no-cache"
+												},
+												{
+													"key": "Expires",
+													"value": "0"
+												},
+												{
+													"key": "X-Frame-Options",
+													"value": "DENY"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Date",
+													"value": "Sat, 03 Aug 2024 17:38:03 GMT"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=60"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"code\": 201,\n    \"message\": \"your device was successfully saved!\",\n    \"response\": [\n        {\n            \"id\": 105,\n            \"deviceId\": \"7ce9dd96-71bc-4b7e-86ed-e4512fd794f4\",\n            \"serialNumber\": \"SN6743dddh\",\n            \"deviceType\": \"MOBILE\",\n            \"deviceModel\": \"SM-21\",\n            \"ownerId\": \"Aaron.Hane\",\n            \"hardwareAddress\": \"c4e3r1:33d35k14f:0c:87:5c:19\"\n        }\n    ],\n    \"status\": \"success\",\n    \"timeStamp\": \"2024-08-03T17:38:03.3486433Z\"\n}"
+										}
+									]
+								},
+								{
+									"name": "fetch device by ownerId",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJVTklGSUVEX0FVVEhFTlRJQ0FUSU9OX1NFUlZJQ0VfT0FVVEgyU0VSVkVSIiwic3ViIjoiVVNFUl9KV1RfUkVRVUVTVCIsImV4cCI6MTcyMjUwMjg5MywiaWF0IjoxNzIyNTAyNTMzLCJ1c2VySWQiOiJrZWFudS5xdWl0em9uIn0.G1xCTboyn8ZnMb5thSBvoE38WdRLCJzQGotE0HMDXWI",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"ownerEmailAddress\": \"{{$randomEmail}}\",\r\n    \"ownerMobileNumber\": \"{{$randomPhoneNumber}}\",\r\n    \"serialNumber\": \"{{$randomAlphaNumeric}}\",\r\n    \"deviceType\": \"MOBILE_PHONE\",\r\n    \"deviceModel\": \"SM-A{{$randomAlphaNumeric}}\",\r\n    \"hardwareAddress\": \"{{$randomMACAddress}}\"\r\n}\r\n\r\n/* {\r\n    \"code\": 201,\r\n    \"message\": \"your device was successfully saved!\",\r\n    \"response\": {\r\n        \"id\": 152,\r\n        \"deviceId\": \"27ef2fb4-1553-4e9a-ab62-a62011d910c8\",\r\n        \"serialNumber\": \"3\",\r\n        \"deviceType\": \"MOBILE_PHONE\",\r\n        \"deviceModel\": \"SM-Au\",\r\n        \"ownerId\": \"Tony.Fadel58\",\r\n        \"hardwareAddress\": \"c1:7c:0c:87:5c:19\"\r\n    },\r\n    \"status\": \"success\",\r\n    \"timeStamp\": \"2024-08-01T09:02:29.2307828Z\"\r\n} */",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8086/api/devices",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8086",
+											"path": [
+												"api",
+												"devices"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "list of owner's devices",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "http://localhost:8086/find-my-device-ws/api/v1/owners/:ownerId/devices",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8086",
+													"path": [
+														"find-my-device-ws",
+														"api",
+														"v1",
+														"owners",
+														":ownerId",
+														"devices"
+													],
+													"variable": [
+														{
+															"key": "ownerId",
+															"value": "Aaron.Hane"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Vary",
+													"value": "Origin"
+												},
+												{
+													"key": "Vary",
+													"value": "Access-Control-Request-Method"
+												},
+												{
+													"key": "Vary",
+													"value": "Access-Control-Request-Headers"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, no-store, max-age=0, must-revalidate"
+												},
+												{
+													"key": "Pragma",
+													"value": "no-cache"
+												},
+												{
+													"key": "Expires",
+													"value": "0"
+												},
+												{
+													"key": "X-Frame-Options",
+													"value": "DENY"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Date",
+													"value": "Sat, 03 Aug 2024 17:20:12 GMT"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=60"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"code\": 200,\n    \"message\": \"your devices were found\",\n    \"response\": [\n        {\n            \"id\": 1,\n            \"deviceId\": \"bbbca1fa-c663-4942-a61e-8a9cb48095c2\",\n            \"serialNumber\": \"SN6743dddh\",\n            \"deviceType\": \"MOBILE\",\n            \"deviceModel\": \"SM-21\",\n            \"ownerId\": \"Aaron.Hane\",\n            \"hardwareAddress\": \"c1:3c3d54:0c:87:5c:19\"\n        },\n        {\n            \"id\": 2,\n            \"deviceId\": \"f270341a-d5d2-4c41-88f3-5620fa583eb6\",\n            \"serialNumber\": \"SN6743hdddh\",\n            \"deviceType\": \"MOBILE\",\n            \"deviceModel\": \"SM-21\",\n            \"ownerId\": \"Aaron.Hane\",\n            \"hardwareAddress\": \"c2:7c45:0c:87:5c:19\"\n        },\n        {\n            \"id\": 3,\n            \"deviceId\": \"f5b62f3e-c69a-4a49-877c-9f68d29777a4\",\n            \"serialNumber\": \"SN6743hdddh\",\n            \"deviceType\": \"MOBILE\",\n            \"deviceModel\": \"SM-21\",\n            \"ownerId\": \"Aaron.Hane\",\n            \"hardwareAddress\": \"c2:7c445:0c:87:5c:19\"\n        },\n        {\n            \"id\": 4,\n            \"deviceId\": \"0dc30502-5b88-4168-a894-739b2a78e0f4\",\n            \"serialNumber\": \"SN6743dddh\",\n            \"deviceType\": \"MOBILE\",\n            \"deviceModel\": \"SM-21\",\n            \"ownerId\": \"Aaron.Hane\",\n            \"hardwareAddress\": \"c1:3c3d514:0c:87:5c:19\"\n        }\n    ],\n    \"status\": \"success\",\n    \"timeStamp\": \"2024-08-03T17:20:12.7858892Z\"\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}
