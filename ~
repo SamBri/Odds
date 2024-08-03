@@ -1,0 +1,23 @@
+relase v1 build
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Date:      Sat Aug 3 00:26:59 2024 +0000
+#
+# On branch master
+# Changes to be committed:
+#	modified:   src/main/java/com/nothing/apps/find_my_device_ws/controller/DeviceController.java
+#	new file:   src/main/java/com/nothing/apps/find_my_device_ws/controller/OwnerController.java
+#	modified:   src/main/java/com/nothing/apps/find_my_device_ws/db/Device.java
+#	new file:   src/main/java/com/nothing/apps/find_my_device_ws/dto/DeviceForm.java
+#	new file:   src/main/java/com/nothing/apps/find_my_device_ws/dto/OwnerDetailsFormDto.java
+#	modified:   src/main/java/com/nothing/apps/find_my_device_ws/dto/SaveDeviceRequestDto.java
+#	modified:   src/main/java/com/nothing/apps/find_my_device_ws/exception/FindMyDeviceExceptionService.java
+#	renamed:    src/main/java/com/nothing/apps/find_my_device_ws/utils/InvalidEmailAddressException.java -> src/main/java/com/nothing/apps/find_my_device_ws/exception/InvalidEmailAddressException.java
+#	renamed:    src/main/java/com/nothing/apps/find_my_device_ws/service/DeviceService.java -> src/main/java/com/nothing/apps/find_my_device_ws/service/DatabaseService.java
+#	new file:   src/main/java/com/nothing/apps/find_my_device_ws/service/DatabaseServiceImpl.java
+#	deleted:    src/main/java/com/nothing/apps/find_my_device_ws/service/DeviceServiceImpl.java
+#	modified:   src/main/java/com/nothing/apps/find_my_device_ws/utils/StringUtil.java
+#	modified:   src/main/resources/application.properties
+#
