@@ -1,4 +1,4 @@
-package com.nothing.apps.find_my_device_ws.utils;
+package com.nothing.apps.find_my_device_ws.exception;
 
 public class InvalidEmailAddressException extends Exception {
 

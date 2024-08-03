@@ -1,6 +1,9 @@
 package com.nothing.apps.find_my_device_ws.dto;
 
-import com.nothing.apps.find_my_device_ws.db.Owner;
+import java.util.List;
+import java.util.Set;
+
+import com.nothing.apps.find_my_device_ws.db.Device;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,17 +18,8 @@ import lombok.ToString;
 @NoArgsConstructor
 public class SaveDeviceRequestDto {
 
-	private String ownerEmailAddress;
-
-	private String ownerMobileNumber;
-
-	private String serialNumber;
-
-	private String deviceType;
-
-	private String deviceModel;
-
-	private String hardwareAddress;
+	
+	List<Set<DeviceForm>> deviceList;
 
 	private String ownerId;
 

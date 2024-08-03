@@ -4,21 +4,21 @@ import java.util.List;
 
 import com.nothing.apps.find_my_device_ws.db.Device;
 import com.nothing.apps.find_my_device_ws.db.Owner;
+import com.nothing.apps.find_my_device_ws.dto.OwnerDetailsFormDto;
 import com.nothing.apps.find_my_device_ws.dto.SaveDeviceRequestDto;
+import com.nothing.apps.find_my_device_ws.exception.InvalidEmailAddressException;
 import com.nothing.apps.find_my_device_ws.exception.InvalidMobileNumberException;
 import com.nothing.apps.find_my_device_ws.exception.OwnerAlreadyExistException;
 import com.nothing.apps.find_my_device_ws.exception.OwnerDoesNotExistException;
 import com.nothing.apps.find_my_device_ws.exception.SaveDeviceException;
-import com.nothing.apps.find_my_device_ws.utils.InvalidEmailAddressException;
 
-public interface DeviceService {
+public interface DatabaseService {
 	
-	Device saveDevice(SaveDeviceRequestDto device) throws SaveDeviceException, InvalidEmailAddressException, InvalidMobileNumberException, OwnerAlreadyExistException;
+	List<Device> saveDevice(SaveDeviceRequestDto device) throws SaveDeviceException;
 
-	List<Device> fetchDeviceByOwnerEmailAddress(String emailAddress) throws OwnerDoesNotExistException;
-	
-	Owner findOwnerByEmailAddress(String emailAddress) throws OwnerAlreadyExistException;
-	
-	Owner findOwnerByMobileNumber(String mobileNumber) throws OwnerAlreadyExistException;
+	Owner onboardOwner(OwnerDetailsFormDto data) throws OwnerAlreadyExistException, InvalidEmailAddressException;
+
+	List<Device> fetchDeviceByOwnerId(String OwnerId) throws OwnerDoesNotExistException;
+
 
 }

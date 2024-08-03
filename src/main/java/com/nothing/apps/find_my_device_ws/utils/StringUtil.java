@@ -3,6 +3,7 @@ package com.nothing.apps.find_my_device_ws.utils;
 
 import java.util.regex.PatternSyntaxException;
 
+import com.nothing.apps.find_my_device_ws.exception.InvalidEmailAddressException;
 import com.nothing.apps.find_my_device_ws.exception.InvalidMobileNumberException;
 
 import lombok.extern.slf4j.Slf4j;

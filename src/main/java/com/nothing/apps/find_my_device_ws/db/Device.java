@@ -33,18 +33,18 @@ public class Device {
 	private UUID deviceId;
 
 	@Column(name = "serial_number", unique = true, nullable = false)
-	private String serialNumber;
+	protected String serialNumber;
 
 	@Column(name = "device_type", nullable = false)
-	private String deviceType;
+	protected String deviceType;
 
 	@Column(name = "device_model", nullable = false)
-	private String deviceModel;
+	protected String deviceModel;
 
 	@Column(name = "owner_id", nullable = false)
-	private String ownerId;
+	protected String ownerId;
 
 	@Column(name = "hardware_address", unique = true, nullable = false)
-	private String hardwareAddress;
+	protected String hardwareAddress;
 
 }
