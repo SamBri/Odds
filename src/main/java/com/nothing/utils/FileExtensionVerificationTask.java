@@ -11,6 +11,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitter;
@@ -57,7 +58,11 @@ public class FileExtensionVerificationTask implements Runnable {
 					
 					if (!fileScanResult.getResult().equalsIgnoreCase("ACCEPTABLE")) {
 
+						//emitter.send(fileScanResult.getMessage());
+						System.err.println("@@@ sending message");
+						
 						emitter.send(fileScanResult.getMessage());
+
 
 					} else {
 						
