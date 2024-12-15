@@ -102,7 +102,7 @@ public class FileScannerServerController {
 
 	@RequestMapping(path = "/scan/notification", produces = MediaType.APPLICATION_JSON_VALUE, method = {
 			RequestMethod.GET })
-	public List<File> emitFileScanNotification(@RequestParam String requestId) {
+	public SseEmitter emitFileScanNotification(@RequestParam String requestId) {
 
 		SseEmitter emitter = new SseEmitter(86_400_000L); // streaming length
 
@@ -148,7 +148,7 @@ public class FileScannerServerController {
 			
 		}
 
-		return files;
+		return emitter;
 	}
 
 	/**
