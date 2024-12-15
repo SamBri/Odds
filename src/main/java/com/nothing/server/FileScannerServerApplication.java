@@ -1,4 +1,4 @@
-package com.nothing.utils;
+package com.nothing.server;
 
 import java.util.Arrays;
 import java.util.EnumSet;
@@ -10,13 +10,15 @@ import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.converter.HttpMessageConverter;
 
+import com.nothing.server.filters.SSEResponseConversionFilter;
+
 import jakarta.servlet.DispatcherType;
 
 @SpringBootApplication
-public class FileUploadApplication {
+public class FileScannerServerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(FileUploadApplication.class, args);
+		SpringApplication.run(FileScannerServerApplication.class, args);
 	}
 
 	@Bean

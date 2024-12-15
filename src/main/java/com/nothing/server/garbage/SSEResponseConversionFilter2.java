@@ -1,4 +1,4 @@
-package com.nothing.utils;
+package com.nothing.server.garbage;
 
 import java.io.IOException;
 

@@ -1,4 +1,4 @@
-package com.nothing.utils;
+package com.nothing.server;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,7 +11,7 @@ import lombok.ToString;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class FileScanResult {
+public class FileScannerResponse {
 	
 	
   private String result;

@@ -1,4 +1,4 @@
-package com.nothing.utils;
+package com.nothing.server.threads;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -15,6 +15,8 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitter;
+
+import com.nothing.server.FileScannerResponse;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -46,15 +48,15 @@ public class FileExtensionVerificationTask implements Runnable {
 
 			String theFile = file.getOriginalFilename();
 
-			List<Future<FileScanResult>> values = scanFiles(theFile);
+			List<Future<FileScannerResponse>> values = scanFiles(theFile);
 			
 			
 			values.forEach(System.out::println);
 
-			for (Future<FileScanResult> future : values) {
+			for (Future<FileScannerResponse> future : values) {
 				try {
 
-					FileScanResult fileScanResult = future.get(); 
+					FileScannerResponse fileScanResult = future.get(); 
 					
 					if (!fileScanResult.getResult().equalsIgnoreCase("ACCEPTABLE")) {
 
@@ -94,7 +96,7 @@ public class FileExtensionVerificationTask implements Runnable {
 
 	}
 
-	private List<Future<FileScanResult>> scanFiles(final String file) {
+	private List<Future<FileScannerResponse>> scanFiles(final String file) {
 
 		System.out.println("The file : " + file);
 
@@ -103,10 +105,10 @@ public class FileExtensionVerificationTask implements Runnable {
 		System.out.println("The ext : " + fileExt);
 
 		exeService = Executors.newCachedThreadPool();
-		List<Future<FileScanResult>> values = null;
+		List<Future<FileScannerResponse>> values = null;
 
 		System.out.println(illegalFileExtlist.toString());
-		ArrayList<Callable<FileScanResult>> task = new ArrayList<>(illegalFileExtlist.size());
+		ArrayList<Callable<FileScannerResponse>> task = new ArrayList<>(illegalFileExtlist.size());
 
 		for (String illegalExt : illegalFileExtlist) {
 

@@ -1,6 +1,8 @@
-package com.nothing.utils;
+package com.nothing.server.threads;
 
 import java.util.concurrent.Callable;
+
+import com.nothing.server.FileScannerResponse;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,7 +16,7 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class ExtTask implements Callable<FileScanResult> {
+public class ExtTask implements Callable<FileScannerResponse> {
 
 	
 	private String fileExt;
@@ -28,9 +30,9 @@ public class ExtTask implements Callable<FileScanResult> {
 
 
 	@Override
-	public FileScanResult call() throws Exception {
+	public FileScannerResponse call() throws Exception {
 
-		FileScanResult fileScanResult = new FileScanResult();
+		FileScannerResponse fileScanResult = new FileScannerResponse();
 		
 		if(!fileExt.equalsIgnoreCase(illegal))
 		{

@@ -1,4 +1,4 @@
-package com.nothing.utils;
+package com.nothing.server.garbage;
 
 import org.springframework.boot.autoconfigure.http.HttpMessageConverters;
 import org.springframework.context.annotation.Bean;

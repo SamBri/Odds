@@ -1,4 +1,4 @@
-package com.nothing.utils;
+package com.nothing.server.filters;
 
 import java.io.IOException;
 

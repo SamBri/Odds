@@ -1,4 +1,4 @@
-package com.nothing.utils;
+package com.nothing.server.notifications.sse;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
