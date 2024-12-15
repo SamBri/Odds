@@ -13,10 +13,10 @@ import java.util.concurrent.Future;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
-import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitter;
 
 import com.nothing.server.FileScannerResponse;
+import com.nothing.server.entity.File;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -32,7 +32,7 @@ public class FileExtensionVerificationTask implements Runnable {
 
 	private ResponseBodyEmitter emitter;
 
-	private List<MultipartFile> list;
+	private List<File> list;
 
 	@Value("#{'${LIST_OF_ILLEGAL_FILES_EXT}'.split(',')}")
 	private List<String> illegalFileExtlist;
@@ -42,11 +42,11 @@ public class FileExtensionVerificationTask implements Runnable {
 	@Override
 	public void run() {
 
-		List<MultipartFile> files = list;
+		List<File> files = list;
 
-		for (MultipartFile file : list) {
+		for (File file : list) {
 
-			String theFile = file.getOriginalFilename();
+			String theFile = file.getName();
 
 			List<Future<FileScannerResponse>> values = scanFiles(theFile);
 			

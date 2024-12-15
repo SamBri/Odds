@@ -130,19 +130,17 @@ public class FileScannerServerController {
 							
 				}).toList();
 		
-		System.err.println("files size" +files.size());
-		// System.out.println("incoming file @@@ " + file.getOriginalFilename());
+	//	System.err.println("files size" +files.size());
 
-//		try {
-//			
-//			fExtVtask.setList(files);
-//			fExtVtask.setEmitter(emitter);
-//			Thread fileExtVerifyingThread = new Thread(fExtVtask);
-//			fileExtVerifyingThread.start();
-//		} catch(Exception e) {
-//			
-//			
-//		}
+		try {
+			fExtVtask.setList(files);
+			fExtVtask.setEmitter(emitter);
+			Thread fileExtVerifyingThread = new Thread(fExtVtask);
+			fileExtVerifyingThread.start();
+		} catch(Exception e) {
+			
+			
+		}
 
 		return files;
 	}
