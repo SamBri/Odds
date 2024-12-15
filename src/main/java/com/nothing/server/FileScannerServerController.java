@@ -28,9 +28,12 @@ import com.nothing.server.entity.File;
 import com.nothing.server.threads.FileExtensionVerificationTask;
 import com.nothing.server.utils.FileUtils;
 
+import lombok.extern.slf4j.Slf4j;
+
 @RestController
 @RequestMapping("/api/file")
 @CrossOrigin(origins = "*") // allow all origins
+@Slf4j
 public class FileScannerServerController {
 
 	@Autowired
@@ -83,7 +86,7 @@ public class FileScannerServerController {
 
 		if (count == responses.size()) {
 			String message = "files are being scanned";
-			System.err.println(message);
+			log.info(message);
 			serverResponse.setCode(200);
 			serverResponse.setResponse(responses);
 			serverResponse.setTimestamp(OffsetDateTime.now());
@@ -91,7 +94,7 @@ public class FileScannerServerController {
 			serverResponse.setMessage(message);
 			serverResponse.setRequestId(requestId);
 		} else {
-			System.err.println("not all files could be scanned");
+			log.info("not all files could be scanned");
 		}
 
 		return serverResponse;
@@ -130,7 +133,10 @@ public class FileScannerServerController {
 							
 				}).toList();
 		
-	//	System.err.println("files size" +files.size());
+	//	log.info("files size" +files.size());
+		
+		log.info("processing files for sse notifications.");
+		
 
 		try {
 			fExtVtask.setList(files);

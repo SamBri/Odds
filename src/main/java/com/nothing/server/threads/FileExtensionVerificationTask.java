@@ -1,8 +1,8 @@
 package com.nothing.server.threads;
 
+
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
@@ -11,7 +11,6 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitter;
 
@@ -22,12 +21,14 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.extern.slf4j.Slf4j;
 
 @Component
 @Getter
 @Setter
 @ToString
 @NoArgsConstructor
+@Slf4j
 public class FileExtensionVerificationTask implements Runnable {
 
 	private ResponseBodyEmitter emitter;
@@ -61,14 +62,14 @@ public class FileExtensionVerificationTask implements Runnable {
 					if (!fileScanResult.getResult().equalsIgnoreCase("ACCEPTABLE")) {
 
 						//emitter.send(fileScanResult.getMessage());
-						System.err.println("@@@ sending message");
+						log.info("@@@ sending message");
 						
 						emitter.send(fileScanResult.getMessage());
 
 
 					} else {
 						
-						System.out.println("This file extension, {} ,is acceptable".replace("{}",fileScanResult.getFileExt()));
+						log.info("This file extension, {} ,is acceptable".replace("{}",fileScanResult.getFileExt()));
 					//	emitter.send(fileScanResult.getMessage());
 
 					}
@@ -98,23 +99,23 @@ public class FileExtensionVerificationTask implements Runnable {
 
 	private List<Future<FileScannerResponse>> scanFiles(final String file) {
 
-		System.out.println("The file : " + file);
+		log.info("The file : " + file);
 
 		final String fileExt = "."+file.split("\\.")[1];
 
-		System.out.println("The ext : " + fileExt);
+		log.info("The ext : " + fileExt);
 
 		exeService = Executors.newCachedThreadPool();
 		List<Future<FileScannerResponse>> values = null;
 
-		System.out.println(illegalFileExtlist.toString());
+		log.info(illegalFileExtlist.toString());
 		ArrayList<Callable<FileScannerResponse>> task = new ArrayList<>(illegalFileExtlist.size());
 
 		for (String illegalExt : illegalFileExtlist) {
 
 			illegalExt = illegalExt.trim();
 
-			System.out.println("@@ illegalExt for processing " + illegalExt);
+			log.info("@@ illegalExt for processing " + illegalExt);
 			task.add(new ExtTask(fileExt, file ,illegalExt));
 		}
 
